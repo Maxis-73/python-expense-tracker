@@ -87,7 +87,8 @@ def summary_by_month(month):
     for exp in data:
         date_aux = datetime.strptime(exp['date'], "%d-%m-%Y")
         m = date_aux.month
-        if m == month:
+        y = date_aux.year
+        if m == month and y == datetime.now().year:
             total += exp['amount']
     print(f'Total expenses for {month_list[month-1]}: ${total}')
 
